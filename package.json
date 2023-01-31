@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "PORT=2000 next start"
   },
   "dependencies": {
     "antd": "^5.0.3",

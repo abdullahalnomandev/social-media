@@ -71,19 +71,20 @@ const Message = () => {
         </div>
       </div>
       <div className="message-content ">
-        <div className="content max-h-[420px] overflow-auto">
+        <div className="content relative max-h-[420px] overflow-auto">
           {message.map(({ message, status }) => (
-            <div>
-              <p
-                className={
-                  status
-                    ? " float-right my-3 mx-2  max-w-xs rounded-2xl bg-blue-600 py-2 px-3 text-white"
-                    : "my-3 mx-2 inline-block max-w-xs rounded-2xl bg-[#f0f2f5] py-2 px-3 text-black"
-                }
-              >
-                {message}
-              </p>
-            </div>
+            <>
+              {status && (
+                <p className="my-3 mx-2  max-w-xs rounded-2xl bg-[#f0f2f5] py-2 px-3 text-black">
+                  {message}
+                </p>
+              )}
+              {!status && (
+                <p className=" my-3 mx-2 ml-auto   max-w-xs rounded-2xl bg-blue-600 py-2 px-3 text-white">
+                  {message}
+                </p>
+              )}
+            </>
           ))}
         </div>
       </div>
